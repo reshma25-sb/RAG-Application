@@ -1,0 +1,11 @@
+fastapi==0.115.0
+uvicorn==0.30.1
+langchain==0.3.3
+langchain-chroma==0.1.4
+langchain-huggingface==0.1.2
+langchain-community==0.3.2
+huggingface-hub==0.36.0
+transformers==4.57.1
+sentence-transformers==2.7.0
+chromadb==0.5.5
+pypdf==4.2.0
