@@ -1,0 +1,163 @@
+Project Title:
+Retrieval-Augmented Generation (RAG) Application using LangChain and ChromaDB
+
+1. Objective
+
+Describe the main goal of the project.
+(Example: To build an AI system that allows users to query documents and receive context-aware answers using local embeddings and generation models.)
+
+2. Tools and Technologies Used
+
+Programming Language: Python
+
+Frameworks / Libraries:
+
+LangChain
+
+ChromaDB
+
+Streamlit
+
+Sentence-Transformers (all-MiniLM-L6-v2)
+
+Transformers (google/flan-t5-small)
+
+PyPDF (for PDF reading)
+
+IDE / Environment:
+
+Visual Studio Code / PyCharm / Terminal
+
+Python Virtual Environment (venv)
+
+Hardware:
+
+CPU / GPU (if applicable)
+
+3. Model Used
+
+Embedding Model: SentenceTransformer – all-MiniLM-L6-v2
+(Used for converting text chunks into numerical vectors for similarity search)
+
+Generation Model: Transformer – google/flan-t5-small
+(Used to generate final natural language answers based on retrieved context)
+
+4. Project Architecture
+
+Data Folder: Stores PDF and TXT files to be indexed.
+
+ChromaDB: Stores embeddings and metadata of text chunks.
+
+RAG Pipeline Flow:
+
+Load and preprocess documents
+
+Chunk and embed using sentence-transformers
+
+Store embeddings in ChromaDB
+
+Retrieve relevant chunks for user query
+
+Generate answer using Flan-T5 model
+
+5. Implementation Steps
+
+Environment Setup
+
+Installed Python and required libraries
+
+Created virtual environment
+
+Installed dependencies (langchain, chromadb, transformers, etc.)
+
+Embedding & Vector Database Setup
+
+Loaded the embedding model (all-MiniLM-L6-v2)
+
+Configured ChromaDB persistence
+
+Document Loading and Chunking
+
+Implemented PDF and text file reading functions
+
+Split text into overlapping chunks
+
+Indexing Process
+
+Converted text chunks into embeddings
+
+Stored embeddings in Chroma collection
+
+Retrieval and Generation
+
+Retrieved top k relevant passages using query embedding
+
+Generated natural language answers using Flan-T5
+
+Streamlit UI Development
+
+Developed interface to upload documents and ask questions
+
+Displayed retrieved passages and generated answers
+
+6. Issues Faced and Rectification Steps
+Issue Description	Root Cause	Rectification Step
+Example: streamlit not recognized	Streamlit not installed in virtual environment	Activated venv and ran pip install streamlit
+Example: Failed to build chroma-hnswlib	Missing C++ build tools	Installed Microsoft Visual C++ Build Tools
+Example: transformers version conflict	Mismatch between transformers and huggingface-hub	Upgraded huggingface-hub to >=0.34.0
+Example: No documents found	Missing files in data/ folder	Added .pdf and .txt files to data directory
+Example: Answer not accurate	Small model used for generation	Switched to larger model like flan-t5-base for better results
+
+(Add more rows as per your actual debugging experience.)
+
+7. Testing
+
+Functional Testing:
+
+Verified indexing, retrieval, and Q&A flow.
+
+UI Testing:
+
+Uploaded various document formats via Streamlit.
+
+Performance Testing:
+
+Tested retrieval speed and answer accuracy.
+
+8. Results
+
+Successfully built a working RAG application capable of answering document-based questions.
+
+Integrated local embeddings and generation pipeline.
+
+Achieved efficient document retrieval and contextual answer generation.
+
+9. Learning Outcomes
+
+Understood RAG architecture and the interaction between retrieval and generation.
+
+Gained experience using ChromaDB for vector storage.
+
+Learned prompt engineering and local model deployment.
+
+Improved debugging skills during environment setup.
+
+10. Future Enhancements
+
+Integrate OpenAI / Llama / Mistral models for improved generation quality.
+
+Implement advanced chunking and summarization methods.
+
+Add multi-document query support and caching.
+
+Deploy as a web app or API service.
+
+11. References
+
+LangChain Documentation
+
+ChromaDB Documentation
+
+Hugging Face Transformers and SentenceTransformers
+
+Streamlit Framework
